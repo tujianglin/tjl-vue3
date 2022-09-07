@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import { resolve } from 'path';
 
 import { createVitePlugins } from './build/vite/plugin';
+import { createProxy } from './build/vite/proxy';
 import { wrapperEnv } from './build/utils';
 import pkg from './package.json';
 
@@ -19,13 +20,14 @@ const __APP_INFO__ = {
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd());
   const viteEnv = wrapperEnv(env);
-  const { VITE_PORT } = viteEnv;
+  const { VITE_PORT, VITE_PROXY } = viteEnv;
   const isBuild = command === 'build';
   return {
     // 服务器
     server: {
       host: true,
       port: VITE_PORT,
+      proxy: createProxy(VITE_PROXY),
     },
     // css 配置
     css: {
