@@ -1,14 +1,7 @@
-<script lang="tsx">
-  import { defineComponent } from 'vue';
-  import Hello from './components/Hello.vue';
-  export default defineComponent({
-    setup() {
-      return () => <Hello></Hello>;
-    },
-  });
+<template>
+  <RouterView />
+</template>
+<script lang="tsx" setup>
+  import {} from 'vue';
 </script>
-<style lang="less" scoped>
-  .name {
-    color: @color;
-  }
-</style>
+<style lang="less" scoped></style>

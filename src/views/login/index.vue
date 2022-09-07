@@ -2,7 +2,7 @@
   import { defineComponent } from 'vue';
   export default defineComponent({
     setup() {
-      return () => <div class="name">111</div>;
+      return () => <div>登录</div>;
     },
   });
 </script>
