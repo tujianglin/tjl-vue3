@@ -16,12 +16,21 @@
     "lodash-es": "^4.17.21",
     "vue": "^3.2.37"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-zh"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.7.15",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@vitejs/plugin-vue": "^3.1.0",
     "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog-zh": "^0.0.2",
     "eslint": "^8.23.0",
     "eslint-plugin-vue": "^9.4.0",
     "husky": "^8.0.1",
