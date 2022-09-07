@@ -1,12 +1,10 @@
 import { defineConfig, loadEnv } from 'vite';
 
-import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-
 import { pick } from 'lodash-es';
 import dayjs from 'dayjs';
 import { resolve } from 'path';
 
+import { createVitePlugins } from './build/vite/plugin';
 import { wrapperEnv } from './build/utils';
 import pkg from './package.json';
 
@@ -22,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd());
   const viteEnv = wrapperEnv(env);
   const { VITE_PORT } = viteEnv;
-  const _ = command === 'build';
+  const isBuild = command === 'build';
   return {
     // 服务器
     server: {
@@ -58,6 +56,6 @@ export default defineConfig(({ command, mode }) => {
       __APP_INFO__: JSON.stringify(__APP_INFO__),
     },
     // 插件
-    plugins: [vue(), vueJsx()],
+    plugins: createVitePlugins(viteEnv, isBuild),
   };
 });
