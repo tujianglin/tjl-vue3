@@ -6,7 +6,7 @@ export const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/login',
+      path: '/',
       component: () => import('/@/views/login/index.vue'),
     },
   ] as unknown as RouteRecordRaw[],

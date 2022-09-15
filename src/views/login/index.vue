@@ -1,8 +1,9 @@
 <script lang="tsx">
   import { defineComponent } from 'vue';
+  import { Button } from 'ant-design-vue';
   export default defineComponent({
     setup() {
-      return () => <div>登录</div>;
+      return () => <Button type={'primary'}>登录</Button>;
     },
   });
 </script>

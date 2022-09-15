@@ -37,6 +37,7 @@ export default defineConfig(({ command, mode }) => {
           modifyVars: {
             '@color': 'red',
           },
+          javascriptEnabled: true,
         },
       },
     },
